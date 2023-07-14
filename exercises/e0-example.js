@@ -8,8 +8,13 @@ export function getFirstPlanetName(data) {
   // Your code goes here...
   const planets = data.planets;
   //console.log(planets);
-  return planets[0].name;
   //testing again
+  const filtered = planets.filter((planet)=>{
+    return planet;
+  })
+  if(filtered.length > 0){
+    return filtered[0].name;
+  }
 }
 
 

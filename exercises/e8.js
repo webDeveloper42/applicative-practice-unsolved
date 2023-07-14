@@ -6,6 +6,31 @@ import { data } from "../data/data";
 
 export function findPlanetNameByMoon(data, moonName) {
   // Your code goes here...
+  // let result = [];
+  // const planet = data.planets;
+  // for(let i = 0; i < planet.length; i++){
+  //   const planetName = planet[i].name;
+  //   const planetMoon = planet[i].moons;
+  //   if(planetMoon && Array.isArray(planetMoon)){
+  //     for(let x = 0; x < planetMoon.length; x++){
+  //       if(planetMoon[x] === moonName){
+  //         result.push(planetName);
+  //       }
+  //     }
+  //   }
+  // }
+  // return result;
+  let planets = data.planets;
+  
+  let result = planets
+    .filter(planet => planet.moons && planet.moons.includes(moonName))
+    .map(planet => planet.name);
+    if (result.length > 0) {
+      return result[0];
+    } else {
+      return null;
+    }  
+    
 }
 
 
