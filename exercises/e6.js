@@ -17,15 +17,9 @@ export function getAsteroidsDiscoveredAfterYear(data, year) {
   // }
   // return result;
   let asteroids = data.asteroids;
-  let filteredAsteroids = asteroids.map(asteroid => {
-    if(asteroid.discoveryYear > year){
-      return asteroid.name;
-    }else{
-      return null;
-    }
-  })
-  let result = filteredAsteroids.filter(asteroidName => asteroidName !== null);
-  return result;
+  return asteroids
+    .filter(asteroid => asteroid.discoveryYear > year)
+    .map(asteroid => asteroid.name);
 }
 
 

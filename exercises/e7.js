@@ -17,15 +17,9 @@ export function getPlanetsNamesWithMoons(data) {
   // }
   // return result;
   let planets = data.planets;
-  let filteredPlanets = planets.map(planet => {
-    if(planet.hasOwnProperty('moons')){
-      return planet.name;
-    }else{
-      return null;
-    }
-  })
-  let result = filteredPlanets.filter(planetWithMoon => planetWithMoon !== null);
-  return result
+  return planets
+    .filter(planet => planet.moons && planet.moons.length > 0)
+    .map(planet => planet.name);
 }
 
 

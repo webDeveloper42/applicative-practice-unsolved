@@ -8,16 +8,9 @@ import { data } from "../data/data";
 export function lowMoonsPlanets(data) {
   // Your code goes here...
   let planets = data.planets;
-  let filteredPlanets = planets
-    .filter(planet =>(planet.moons && planet.moons.length < 10) || !planet.moons)
-    .map(planet =>{
-    if(planet.name){
-      return planet.name;
-    }else{
-      return null;
-    }
-  }).filter(name => name !== null);
-  return filteredPlanets;
+  return planets
+    .filter(planet =>(!planet.moons || planet.moons.length < 10 ))
+    .map(planet => planet.name);
 }
 
 // === TEST YOURSELF ===

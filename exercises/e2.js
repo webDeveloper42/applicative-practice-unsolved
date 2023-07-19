@@ -7,11 +7,7 @@ import { data } from "../data/data";
 export function getAsteroidNames(data) {
   // Your code goes here...
   const asteroids = data.asteroids;
-  let filtered = asteroids.reduce((acc, asteroid)=>{
-    acc.push(asteroid.name);
-    return acc;
-  }, [])
-  return filtered;
+  return asteroids.map(asteroid => asteroid.name);
 }
 
 

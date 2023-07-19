@@ -21,9 +21,8 @@ export function findPlanetNameByMoon(data, moonName) {
   // }
   // return result;
   let planets = data.planets;
-  
   let result = planets
-    .filter(planet => planet.moons && planet.moons.includes(moonName))
+    .filter(planet => planet.moons?.includes(moonName))
     .map(planet => planet.name);
     if (result.length > 0) {
       return result[0];

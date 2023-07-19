@@ -17,17 +17,10 @@ export function getPlanetsWithLowGravity(data) {
   // }
   // return result;
   let planets = data.planets;
-  let filteredGravity = planets.map(planet=>{
-    if (planet.gravity <= 10){
-      return planet.name;
-    }else {
-      return null;
-    }
-  })
-  let result = filteredGravity.filter(planetName => planetName !== null);
-  return result;
+  return planets
+    .filter(planet => planet.gravity < 10)
+    .map(planet => planet.name);
 }
-
 
 
 // === TEST YOURSELF ===

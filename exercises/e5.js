@@ -17,15 +17,9 @@ export function getPlanetsWithMassValue(data, number) {
   // }
   // return result;
   let planets = data.planets;
-  let filteredMassValue = planets.map(planet =>{
-    if(planet.mass.massValue >= number){
-      return planet.name;
-    }else{
-      return null;
-    }
-  })
-  let result = filteredMassValue.filter(planetName => planetName !== null);
-  return result;
+  return planets
+    .filter(planet => planet.mass.massValue >= number)
+    .map(planet => planet.name);
 }
 
 
